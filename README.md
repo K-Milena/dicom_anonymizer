@@ -15,10 +15,11 @@ Program do anonimizacji plików DICOM. W każdym z plików dane osobowe pacjenta
 
 ```bash
 python main.py <ścieżka_do_katalogu_wejściowego> <ścieżka_do_katalogu_docelowego>  <tagi_do_anonimizacji>
-
+```
 ## Przykład
+```
 python main.py ./input ./output "PatientName,PatientID"
-
+```
 
 ### Podsumowanie
 
