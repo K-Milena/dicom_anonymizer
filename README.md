@@ -27,8 +27,3 @@ python main.py ./input ./output "PatientName,PatientID"
 3. Anonimizacja danych polega na zastępowaniu wartości tagów tekstowych (np. imię pacjenta) fikcyjnymi danymi.
 4. Program pozwala na określenie katalogu wejściowego, katalogu wyjściowego oraz listy tagów do anonimizacji za pomocą argumentów wiersza poleceń.
 
-## Linki do edytowania i wyświetlania dokumentacji w LaTeX
-
-Anyone with this link can edit this project: https://www.overleaf.com/9926597754gnfznmnrvzrb#2933db
-
-Anyone with this link can view this project: https://www.overleaf.com/read/rfypkgwqfqjq#170fba
