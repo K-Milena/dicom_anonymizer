@@ -2,6 +2,8 @@
 
 Program do anonimizacji plików DICOM. W każdym z plików dane osobowe pacjenta muszą zostać zastąpione wartościami generowanymi według zadanego schematu (np. pacjent01, pacjent02, …) lub losowymi. Program powinien zapewniać użytkownikowi możliwość wyboru listy plików źródłowych (lub katalogu, w którym się one znajdują), docelowego katalogu oraz listy tagów, które podlegać będą anonimizacji. 
 
+Program anonimizuje dane osobowe wprowadzając dane wygenerowane losowo.
+
 ## Wymagania
 
 - Python 3.x
@@ -20,6 +22,7 @@ python main.py <ścieżka_do_katalogu_wejściowego> <ścieżka_do_katalogu_docel
 ```
 python main.py ./input ./output "PatientName,PatientID"
 ```
+Gdy przykładowy kagtalog wyjściowy nie istnieje, zostaje automatycznie stworzony.
 
 ### Podsumowanie
 
@@ -28,3 +31,5 @@ python main.py ./input ./output "PatientName,PatientID"
 3. Anonimizacja danych polega na zastępowaniu wartości tagów tekstowych (np. imię pacjenta) fikcyjnymi danymi.
 4. Program pozwala na określenie katalogu wejściowego, katalogu wyjściowego oraz listy tagów do anonimizacji za pomocą argumentów wiersza poleceń.
 
+## chceck_anonymizer.py
+Plik służy do odczytu tagów z danych plików w celu weryfikacji, czy tagi pliku .dcm zostały zanimizowane poprawnie.
