@@ -13,6 +13,6 @@ def check_anonymization(file_path, tags_to_check):
         print(f"Tag: {tag}, Wartość: {tag_name}")
 
 # Przykład użycia
-tags_to_check = [0x00100010, 0x00100020, 0x00100030]  # Przykładowe tagi: PatientName,PatientID,PatientBirthDate
+tags_to_check = [0x00100010, 0x00100020, 0x00100030]  # przykładowe tagi: PatientName,PatientID,PatientBirthDate
 check_anonymization("input/example1.dcm", tags_to_check)
 check_anonymization("output/example1.dcm", tags_to_check)

@@ -1,22 +1,29 @@
-# dicom_anonymizer.py
 import pydicom
 from pydicom.dataelem import DataElement
 import os
+import random
+import string
+
+STR_LENGTH =   8
+
+# kod odpowiedzialny za randomizowanie tagu
+def generate_random_string(length=STR_LENGTH):
+    characters = string.ascii_letters + string.digits  # a-z, A-Z, 0-9 -
+    return ''.join(random.choices(characters, k=length))
+
 
 def anonymize_dicom(file_path, tags_to_anonymize):
     """
     Funkcja anonimująca dane w pliku DICOM.
     """
-    # Wczytaj plik DICOM
+    # wczytanie DICOM
     dataset = pydicom.dcmread(file_path)
 
-    # Przechodzimy przez listę tagów do anonimizacji
     for tag in tags_to_anonymize:
         if tag in dataset:
-            # Tworzymy obiekt DataElement
-            dataset[tag] = DataElement(tag, 'ST', 'Anonimizowane')  # 'ST' to typ danych dla stringa
+            anon = generate_random_string()
+            dataset[tag] = DataElement(tag, 'ST', anon)  # 'ST' to typ danych dla stringa
 
-    # Zapisz zmodyfikowany plik DICOM
     anonymized_path = file_path.replace("input", "output")
     dataset.save_as(anonymized_path)
 

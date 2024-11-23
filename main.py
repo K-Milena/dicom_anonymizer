@@ -1,4 +1,4 @@
-# main.py
+
 import argparse
 import os
 from dicom_anonymizer import process_dicom_files
@@ -11,7 +11,7 @@ def main():
     
     args = parser.parse_args()
 
-    # Sprawdzanie, czy katalogi istnieją
+    #czy input istnieje check
     if not os.path.exists(args.input_dir):
         print(f"Błąd: Katalog {args.input_dir} nie istnieje.")
         return
@@ -23,3 +23,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
