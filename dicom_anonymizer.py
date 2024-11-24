@@ -6,15 +6,17 @@ import string
 
 STR_LENGTH =   8
 
-# kod odpowiedzialny za randomizowanie tagu
 def generate_random_string(length=STR_LENGTH):
+    """
+    Generuje losowy ciąg znaków o długości STR_LENGTH.
+    """
     characters = string.ascii_letters + string.digits  # a-z, A-Z, 0-9 -
     return ''.join(random.choices(characters, k=length))
 
 
 def anonymize_dicom(file_path, tags_to_anonymize):
     """
-    Funkcja anonimująca dane w pliku DICOM.
+    Anonimizuje dane w pliku DICOM, zastępując wartości wybranych tagów losowymi ciągami.
     """
     # wczytanie DICOM
     dataset = pydicom.dcmread(file_path)

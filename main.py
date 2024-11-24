@@ -48,7 +48,10 @@ def select_tags(tags):
     return selected_tags
 
 def main():
-
+    """
+    Główna funkcja programu. 
+    Zarządza procesem wyboru plików, tagów oraz anonimizacją plików DICOM.
+    """
     input_dir = input("Podaj ścieżkę do katalogu wejściowego: ")
     if not os.path.exists(input_dir):
         os.makedirs(input_dir)
